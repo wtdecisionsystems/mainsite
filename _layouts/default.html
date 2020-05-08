@@ -10,7 +10,7 @@
   <link rel="icon" href="{{ '/favicon.png' | relative_url }}">
   <link href="{{ '/assets/css/main.css' | relative_url }}" rel="stylesheet">
   <script type="text/javascript" src="{{ '/assets/js/libs/jquery-3.3.1.min.js' | relative_url }}"></script>
-
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   {% if page.meta_description %}
   <meta name="description" content="{{ page.meta_description }}" />{% endif %}
   {% if page.meta_og_title %}
@@ -29,6 +29,7 @@
   <meta name="twitter:site" content="{{ page.meta_twitter_site }}" />{% endif %}
   {% if page.meta_twitter_creator %}
   <meta name="twitter:creator" content="{{ page.meta_twitter_creator }}" />{% endif %}
+  
 </head>
 
 <body
@@ -52,6 +53,17 @@
   <script type="text/javascript" src="{{ '/assets/js/hamburger.js' | relative_url }}"></script>
 
   {% include google-analytics.html %}
+  <script>
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.on("init", user => {
+        if (!user) {
+          window.netlifyIdentity.on("login", () => {
+            document.location.href = "/admin/";
+          });
+        }
+      });
+    }
+  </script>
 </body>
 
 </html>
