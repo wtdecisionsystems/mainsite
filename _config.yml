@@ -46,7 +46,7 @@ defaults:
       permalink: /:basename/
 
 params:
-  google_analytics_id: ''
+  google_analytics_id: 'UA-165921531-1'
   global:
     header_fixed: true
   footer:
