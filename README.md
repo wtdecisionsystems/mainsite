@@ -1,4 +1,4 @@
-# West Texas Decision Systems Themed Main site
+# West Texas Decision Systems Themed Main Site
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/85a102f9-b079-4a5c-95dc-d0fb61e7b5b6/deploy-status)](https://app.netlify.com/sites/confident-spence-b337af/deploys)
 
