@@ -3,7 +3,14 @@ layout: default
 title: Contact
 body_classes: page-contact
 ---
+<script src="https://www.google.com/recaptcha/api.js?render=6Lehr_QUAAAAAPhr8iL58IgcV2AwUJzky_kT_ghH"></script>
+<script>
+grecaptcha.ready(function() {
+    grecaptcha.execute('6Lehr_QUAAAAAPhr8iL58IgcV2AwUJzky_kT_ghH', {action: 'contact'}).then(function(token) {
 
+    });
+});
+</script>
 <div class="intro intro-big pb-5">
   <div class="container">
     <div class="row">
@@ -18,7 +25,7 @@ body_classes: page-contact
   <div class="container pt-4 pt-md-10 pb-4 pb-md-10">
     <div class="row">
       <div class="col-12">
-        <form name="contact" method="POST" action="success" data-netlify="true">
+        <form name="contact" method="POST" action="success" data-netlify="true" data-netlify-recaptcha="true">
           <h2>Enquiry</h2>
           <div class="row">
             <div class="col-md-6">
