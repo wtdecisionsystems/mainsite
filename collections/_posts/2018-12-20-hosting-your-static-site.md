@@ -1,56 +1,71 @@
 ---
-title: 'Hosting Your Static Site'
+title: A Linux Command Cheat Sheet
+date: 2020-06-23T06:55:14.009Z
 ---
+### Various commands ran on a somewhat regular or an infrequent basis on Cent OS
 
-# Est et Lethaei olivae pecudesque pectus
+Change existing directory symbolic links  
+`ln -sfn /directory /symboliclink`
 
-## Vocabat cadentem terribili Sigei lecti erat claudit
+Find world-writable and sticky bit stuff at the current directory and sub-directories  
+`find . -xdev -type d ( -perm -0002 -a ! -perm -1000 ) -print
+//directories`
 
-Lorem markdownum partim ab novorum timor _quibus_, ardua protinus, latet, nox
-**egressu umeris exemit** color me. Ichnobates cinctaque Othryn. Formae Agyrtes
-luxuriant _rediret albenti_. Bene gente, mollibat excidit, flectant ne sua freta
-humus genitore linguae sparsit. Surrexit aere artus in **nautae oraque ramis**
-citraque redeuntem atris: sanior.
+`find . -xdev -type f ( -perm -0002 -a ! -perm -1000 ) -print
+//files`
 
-## Palmis tellus requirit habitavit demit de cretus
+Finding stuff with no owner, checking everything  
+`find / -xdev ( -nouser -o -nogroup ) -print`
 
-**Tibi effugimus faciem**; extrema tu numina certe tempora, est. Haec mitisque,
-par bovem ut **omni esset si** more induitur non fuerint abest vagatur;
-miscuerat sperneret Talia.
+Finding which files contain an occurrence of a string at the current directory and sub-directories  
+`find . -type f -print0 | xargs -0 grep -l localhost
+//localhost is what I'm looking for`
 
-## Fata ille laborem pulso Combe nobis has
+Finding which files of a certain name that contain an occurrence of a string at the current directory and sub-directories  
+`find . -type f -name "*.php" -print0 | xargs -0 grep -l localhost
+//localhost is what I'm looking for`
 
-Forte illum et viscera lacu relevare muneris levavit felix resolvent pinus, tu
-telique vertice nympha. Te coluisse adulterium: movet **est quidem** plurima
-sentit **raptae** quo. Foret patiente faxo plus dixerat sub ad haec et
-percusserat dixisse cupit. Mox veri: sceptroque nescio.
+Changing permissions on all files at the current directory and sub-directories  
+`find . -type f -print0 | xargs -0 chmod 660`
 
-1. Ergo fecit virgineum pinguescere mente fugit
-2. Gradus premitur exclamat pater flamine
-3. Verba luminibus salutent fertur currus morte possum
-4. Ignes hic est vacuae uberrima rector pigris
-5. Turbatque cura auferat in ille duros
+Changing permissions on all directories at the current directory and sub-directories  
+`find . -type d -print0 | xargs -0 chmod 771`
 
-## Esses vultus licet
+Get used storage space in human-readable format  
+`df -h`
 
-Tectus imagine velimus; **ad meque protinus** comesque haberet mihi quotiens in
-alium? Post tarda tela matris non, nulla fictos finitimosque pete tamen aliquid
-vincetis _cumque_. Coniunx sarcina iunctis quo tuos praenuntia ingenium tenuit:
-omne. Curvamine bello probabo te, esse petit duo in Triopeius leti, est hinc
-Trachine ni.
+Use Yum to download updates only (need yum-downloadonly package installed)  
+yum update -y --downloadonly
 
-1. Petit foribusque fessam verberis os sustinet nunc
-2. Sanguis non quot illi
-3. Significant vidit fraude et victa sidera et
+### Commands used less frequently
 
-## Non emicuit solo
+Get disk drive information including disk name  
+`fdisk -l`
 
-Sonus fatum fugiuntque leves. Auxiliare omnes, hic genus est, magnis regnum;
-ille locis oculos. Posset atque dea. Tmolo dedit sit vincula pete, non frater
-pondera ponti Liber poma natos certamen haec hoc, et? Est ex esse tibi fovi arma
-enim rari rectior ego.
+Show which scheduler a particular disk is using  
+`cat /sys/block/sda/queue/scheduler
+// disk sda is the disk in question`
 
-**Anus deo** mihi moderato _facundia_, me stolidi solebam turbatis potuisse
-verso relinque animum circumspexit comprenditur lacertos? Nunc est gratamque tu
-animos et primus patitur: habitatis, [et](#nec-visa-nil) frondibus, iustissimus
-mea sed nube minuant sua.
+Put inside /etc/rc.d/rc.local to change the scheduler to noop on startup for disk sda  
+`echo noop > /sys/block/sda/queue/scheduler`
+
+For finding cron jobs of all users  
+`for user in $(cut -f1 -d: /etc/passwd); do echo $user; crontab -u $user -l; done`
+
+Seeing what processes are listening on what port and address  
+`ss -plnt`
+
+Using OpenSSL to very a certificate  
+`openssl x509 -in public.wtdecisionsystems.com.crt -text -noout`
+
+Using OpenSSL to verify a private key  
+`openssl rsa -in public.wtdecisionsystems.com.key -check -text -noout`
+
+Using OpenSSL to verify PKCS12 (p12)  
+`openssl pkcs12 -info -in public.wtdecisionsystems.com.p12`
+
+Using OpenSSL to convert p12 to pem  
+`openssl pkcs12 -in public.wtdecisionsystems.com.p12 -out public.wtdecisionsystems.com.pem -nodes`
+
+Combining certs and key into a p12 file  
+`openssl pkcs12 -inkey key.pem -in certificate.pem -export -out certificate.p12`
