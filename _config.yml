@@ -61,9 +61,11 @@ params:
     splash_one_image: assets/images/undraw_post_online_dkuk.svg
     splash_one_heading: We Help Business Grow
     splash_one_paragraph:
-      COMING SOON!
+      From data-driven machine learning to data warehousing and 
+      client-first software development, we can help you improve 
+      your business workflows or even explore and implement new ones.
     #splash_one_link_url: work
-    splash_one_link_url: /
+    #splash_one_link_url: /
     splash_one_link_text: Our Work
     show_partners: false
     show_work_section: false
@@ -76,11 +78,10 @@ params:
     splash_one_background_image: assets/images/kaleidico-754543-unsplash.jpg
     splash_one_heading: We build great software
     splash_one_paragraph:
-      Lorem ipsum dolor sit amet, et essent mediocritatem quo, choro volumus
-      oporteat an mei. Numquam dolores mel eu, mea docendi omittantur et, mea ea
-      duis erat. Elit melius cu ius. Per ex novum tantas putant, ei his nullam
-      aliquam apeirian. Aeterno quaestio constituto sea an, no eum intellegat
-      assueverit.
+      Based on your requirements, we can tailor custom-made applications 
+      and larger information systems that suit your needs.  From simple 
+      desktop applications to distributed web-based full-stack systems 
+      with mobile app components, we can help make your vision happen.
   contact_cta:
     heading: Ready to get started?
     subheading: Get in touch and get a quote.
