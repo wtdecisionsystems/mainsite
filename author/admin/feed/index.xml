@@ -9,8 +9,8 @@
 
 <channel>
 	<title>admin &#8211; West Texas Decision Systems</title>
-	<atom:link href="/author/admin/feed/" rel="self" type="application/rss+xml" />
-	<link>/</link>
+	<atom:link href="https://www.wtdecisionsystems.com/author/admin/feed/" rel="self" type="application/rss+xml" />
+	<link>https://www.wtdecisionsystems.com/</link>
 	<description>Insight for all</description>
 	<lastBuildDate>Thu, 20 Jan 2022 07:26:16 +0000</lastBuildDate>
 	<language>en-US</language>
@@ -21,28 +21,28 @@
 	<generator>https://wordpress.org/?v=5.8.3</generator>
 
 <image>
-	<url>/wp-content/uploads/2022/01/cropped-profile-transparent-32x32.png</url>
+	<url>https://www.wtdecisionsystems.com/wp-content/uploads/2022/01/cropped-profile-transparent-32x32.png</url>
 	<title>admin &#8211; West Texas Decision Systems</title>
-	<link>/</link>
+	<link>https://www.wtdecisionsystems.com/</link>
 	<width>32</width>
 	<height>32</height>
 </image> 
 	<item>
 		<title>Hello world!</title>
-		<link>/2022/01/20/hello-world/</link>
-					<comments>/2022/01/20/hello-world/#comments</comments>
+		<link>https://www.wtdecisionsystems.com/2022/01/20/hello-world/</link>
+					<comments>https://www.wtdecisionsystems.com/2022/01/20/hello-world/#comments</comments>
 		
 		<dc:creator><![CDATA[admin]]></dc:creator>
 		<pubDate>Thu, 20 Jan 2022 07:26:16 +0000</pubDate>
 				<category><![CDATA[Uncategorized]]></category>
-		<guid isPermaLink="false">/?p=1</guid>
+		<guid isPermaLink="false">https://www.wtdecisionsystems.com/?p=1</guid>
 
 					<description><![CDATA[Welcome to WordPress. This is your first post. Edit or delete it, then start writing!]]></description>
 										<content:encoded><![CDATA[
 <p>Welcome to WordPress. This is your first post. Edit or delete it, then start writing!</p>
 ]]></content:encoded>
 					
-					<wfw:commentRss>/2022/01/20/hello-world/feed/</wfw:commentRss>
+					<wfw:commentRss>https://www.wtdecisionsystems.com/2022/01/20/hello-world/feed/</wfw:commentRss>
 			<slash:comments>1</slash:comments>
 		
 		

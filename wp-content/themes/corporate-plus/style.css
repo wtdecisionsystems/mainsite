@@ -1376,7 +1376,7 @@ object {
 /*contact form*/
 .contact-form {
     background-attachment: fixed;
-    background-image: url("/wp-content/themes/corporate-plus/assets/img/continents-bg.png");
+    background-image: url("https://www.wtdecisionsystems.com/wp-content/themes/corporate-plus/assets/img/continents-bg.png");
     background-position: center 35px;
     background-repeat: no-repeat;
     background-size: cover;
